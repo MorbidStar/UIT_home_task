@@ -11,7 +11,7 @@ public class MapUtilsImpl implements MapUtils {
 	@Override
 	public MultiMap<MapKey, Integer> merge(Map<MapKey, Integer>... maps)
 			throws IllegalArgumentException {
-		// TODO Auto-generated method stub
+		maps[0].keySet();
 		return null;
 	}
 

@@ -72,12 +72,15 @@ public class MultiMapImpl implements MultiMap<MapKeyImpl, Integer> {
 //		List<Integer> list = new ArrayList<>();
 //		
 //		set = m.keySet();
-//		list.addAll(m.values());
 //		
 //		for (MapKeyImpl iter : set) {
-//			maps.put(iter, list);
+//			Iterator help = valuesIterator(iter);
+//			while (help.hasNext()) {
+//				list.add((Integer) help.next());
+//			}
 //		}
-//		System.out.println(list);
+//		
+//		maps.put((MapKeyImpl) set, list);
 	}
 
 	@Override
@@ -121,8 +124,8 @@ public class MultiMapImpl implements MultiMap<MapKeyImpl, Integer> {
 
 	@Override
 	public Iterator<Integer> valuesIterator(MapKeyImpl key) {
-		// TODO Auto-generated method stub
-		return null;
+		Iterator<Integer> iter = maps.get(key).iterator();
+		return iter;
 	}
 
 }

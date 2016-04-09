@@ -21,12 +21,9 @@ public class Launcher {
 		map.put(new MapKeyImpl("OK"), 7);
 		map.put(new MapKeyImpl("OKay"), 4);
 		System.out.println("------------------");
-		System.out.println(map.size());
-		System.out.println(map2.size());
-		map2.putAll(map);
-		System.out.println(map2.size());
 //		System.out.println(map.countValues(new MapKeyImpl("OK")));
-		System.out.println(map.get(new MapKeyImpl("OKay")));
+//		System.out.println(map2.get(new MapKeyImpl("OKay")));
+		map.valuesIterator(new MapKeyImpl("OKay"));
 	}
 
 }
