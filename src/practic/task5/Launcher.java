@@ -15,15 +15,17 @@ public class Launcher {
 	public static void main(String[] args) {
 		
 		MultiMap<MapKeyImpl, Integer> map = new MultiMapImpl();
-		MultiMap<MapKeyImpl, Integer> map2 = new MultiMapImpl();
+		Map<MapKeyImpl, Integer> map2 = new HashMap();
 		map.put(new MapKeyImpl("OK"), 5);
 		map.put(new MapKeyImpl("OK"), 6);
 		map.put(new MapKeyImpl("OK"), 7);
 		map.put(new MapKeyImpl("OKay"), 4);
+		map2.put(new MapKeyImpl("OKay"), 33);
 		System.out.println("------------------");
-//		System.out.println(map.countValues(new MapKeyImpl("OK")));
-//		System.out.println(map2.get(new MapKeyImpl("OKay")));
-		map.valuesIterator(new MapKeyImpl("OKay"));
+		System.out.println(map.countValues(new MapKeyImpl("OKay")));
+		map.putAll(map2);
+		System.out.println(map.countValues(new MapKeyImpl("OKay")));
+		System.out.println(map.values());
 	}
 
 }

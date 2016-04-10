@@ -68,19 +68,9 @@ public class MultiMapImpl implements MultiMap<MapKeyImpl, Integer> {
 
 	@Override
 	public void putAll(Map<? extends MapKeyImpl, ? extends Integer> m) {
-//		Set<? extends MapKeyImpl> set = new HashSet<>();
-//		List<Integer> list = new ArrayList<>();
-//		
-//		set = m.keySet();
-//		
-//		for (MapKeyImpl iter : set) {
-//			Iterator help = valuesIterator(iter);
-//			while (help.hasNext()) {
-//				list.add((Integer) help.next());
-//			}
-//		}
-//		
-//		maps.put((MapKeyImpl) set, list);
+		for (Entry<? extends MapKeyImpl, ? extends Integer> iter : m.entrySet()) {
+			put(iter.getKey(), iter.getValue());
+		}
 	}
 
 	@Override
