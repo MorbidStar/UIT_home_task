@@ -30,6 +30,7 @@ public class FileCopyUtilsImpl implements FileCopyUtils {
 			while( (k = input.read()) != -1) {
 				output.write(k);
 			}
+			output.flush();
 		} catch (Exception e) {
 			throw new FileCopyFailedException("Exception on copy", e);
 		}

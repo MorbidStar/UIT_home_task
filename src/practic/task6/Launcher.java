@@ -32,18 +32,18 @@ public class Launcher {
 		newTest.createBufferedFileCopyUtils().copyFile("d:/study/razer.mp4", "d:/razer2.mp4");
 		long finish2 = System.currentTimeMillis();
 		System.out.println(finish2 - start2);
-		long start3 = System.currentTimeMillis();
-		newTest.createChannelsFileCopyUtils().copyFile("d:/study/razer.mp4", "d:/razer3.mp4");
-		long finish3 = System.currentTimeMillis();
-		System.out.println(finish3 - start3);
-		long start4 = System.currentTimeMillis();
-		newTest.createJava7CopyUtils().copyFile("d:/study/razer.mp4", "d:/razer4.mp4");
-		long finish4 = System.currentTimeMillis();
-		System.out.println(finish4 - start4);
-		long start = System.currentTimeMillis();
-		newTest.createSimpleFileCopyUtils().copyFile("d:/study/razer.mp4", "d:/razer1.mp4");
-		long finish = System.currentTimeMillis();
-		System.out.println(finish - start);
+//		long start3 = System.currentTimeMillis();
+//		newTest.createChannelsFileCopyUtils().copyFile("d:/study/razer.mp4", "d:/razer3.mp4");
+//		long finish3 = System.currentTimeMillis();
+//		System.out.println(finish3 - start3);
+//		long start4 = System.currentTimeMillis();
+//		newTest.createJava7CopyUtils().copyFile("d:/study/razer.mp4", "d:/razer4.mp4");
+//		long finish4 = System.currentTimeMillis();
+//		System.out.println(finish4 - start4);
+//		long start = System.currentTimeMillis();
+//		newTest.createSimpleFileCopyUtils().copyFile("d:/study/razer.mp4", "d:/razer1.mp4");
+//		long finish = System.currentTimeMillis();
+//		System.out.println(finish - start);
 		
 	}
 

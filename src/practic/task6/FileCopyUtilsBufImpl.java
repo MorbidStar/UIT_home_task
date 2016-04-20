@@ -33,6 +33,7 @@ public class FileCopyUtilsBufImpl implements FileCopyUtils {
 				String tmp = input.readLine();
 				output.write(tmp);
 			}
+			output.flush();
 		} catch (Exception e) {
 			throw new FileCopyFailedException("Exception on copy", e);
 		}
