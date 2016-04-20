@@ -38,11 +38,11 @@ public class SetUtilsImpl implements SetUtils {
 			int val5) {
 		
 		Set<Integer> result = new LinkedHashSet<>();
-		result.add(Integer.valueOf(val1));
-		result.add(Integer.valueOf(val2));
-		result.add(Integer.valueOf(val3));
-		result.add(Integer.valueOf(val4));
-		result.add(Integer.valueOf(val5));
+		result.add(val1);
+		result.add(val2);
+		result.add(val3);
+		result.add(val4);
+		result.add(val5);
 		
 		return result;
 	}

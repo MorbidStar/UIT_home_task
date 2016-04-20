@@ -17,8 +17,7 @@ public class CollectionUtilsImpl implements CollectionUtils {
 		
 		IfArgsNullThrowException(a, b);
 		
-		Collection<Integer> result = new ArrayList<>();
-		result.addAll(a);
+		Collection<Integer> result = new ArrayList<>(a);
 		result.addAll(b);
 		
 		return result;
@@ -31,8 +30,7 @@ public class CollectionUtilsImpl implements CollectionUtils {
 		IfArgsNullThrowException(a, b);
 		
 		List<Integer> result = new ArrayList<>();
-		List<Integer> tmp = new ArrayList<>();
-		tmp.addAll(b);
+		List<Integer> tmp = new ArrayList<>(b);
 		
 		for (int i = 0; i < b.size(); i++) {
 			if (a.contains(tmp.get(i))) {
@@ -50,11 +48,10 @@ public class CollectionUtilsImpl implements CollectionUtils {
 		
 		IfArgsNullThrowException(a, b);
 		
-		Set<Integer> result = new HashSet<>();
-		result.addAll(a);
+		Set<Integer> result = new HashSet<>(a);
 		result.addAll(b);
 		
-		return result;
+		return new HashSet<Integer>(union(a,b));
 	}
 
 	@Override
@@ -63,9 +60,8 @@ public class CollectionUtilsImpl implements CollectionUtils {
 		
 		IfArgsNullThrowException(a, b);
 		
-		Set<Integer> result = new HashSet<>();
+		Set<Integer> result = new HashSet<>(a);
 		
-		result.addAll(a);
 		result.retainAll(b);
 		
 		return result;
@@ -77,8 +73,7 @@ public class CollectionUtilsImpl implements CollectionUtils {
 		
 		IfArgsNullThrowException(a, b);
 		
-		Collection<Integer> result = new ArrayList<>();
-		result.addAll(a);
+		Collection<Integer> result = new ArrayList<>(a);
 		result.removeAll(b);
 		
 		return result;

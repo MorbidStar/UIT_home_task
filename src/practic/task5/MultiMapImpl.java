@@ -2,6 +2,7 @@ package practic.task5;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -29,7 +30,12 @@ public class MultiMapImpl implements MultiMap<MapKeyImpl, Integer> {
 
 	@Override
 	public boolean containsValue(Object value) {
-		return maps.containsValue(value);
+		for (List<Integer> list : maps.values()) {
+			if (list.contains(value)) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	@Override
@@ -59,11 +65,7 @@ public class MultiMapImpl implements MultiMap<MapKeyImpl, Integer> {
 		list.add(value);
 		maps.put(key, list);
 		
-		if (list.size() == 1) {
-			return null;
-		} else {
-			return maps.get(key).get(list.size()-2);
-		}
+		return maps.get(key).get(list.size()-1);
 	}
 
 	@Override
@@ -80,42 +82,38 @@ public class MultiMapImpl implements MultiMap<MapKeyImpl, Integer> {
 
 	@Override
 	public Collection<Integer> values() {
-		return (Collection)maps.values();
+		
+		Collection<Integer> result = new ArrayList<>();
+		
+		for (List<Integer> iter : maps.values()) {
+			result.addAll(iter);
+		}
+		
+		return result;
 	}
 
 	@Override
 	public int countValues(MapKeyImpl key) {
-		return maps.get(key).size();
+		List<Integer> list = new ArrayList<>();
+		return list == null ? 0 : list.size();
 	}
 
 	@Override
 	public Integer get(Object key) {
-		List<Integer> list = new ArrayList<>();
-		
-		if (maps.containsKey(key)) {
-			list.addAll(maps.get(key));
-		} else {
-			return null;
-		}
-		
-		return list.get(list.size()-1);
+		List<Integer> list = maps.get(key);
+		return list == null ? null : list.get(list.size() - 1);
 	}
 
 	@Override
 	public Integer remove(Object key) {
-		
-		if (maps.containsKey(key)) {
 		maps.remove(key);
-		return 1;
-		}
-		
-		return 0;
+		return null;
 	}
 
 	@Override
 	public Iterator<Integer> valuesIterator(MapKeyImpl key) {
-		Iterator<Integer> iter = maps.get(key).iterator();
-		return iter;
+		List<Integer> list = maps.get(key);
+		return list == null ? Collections.EMPTY_LIST.iterator() : list.iterator();
 	}
 
 }

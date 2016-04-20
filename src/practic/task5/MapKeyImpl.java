@@ -2,7 +2,7 @@ package practic.task5;
 
 import nedis.study.interfaces.t5.collections.MapKey;
 
-public class MapKeyImpl implements MapKey {
+public class MapKeyImpl implements MapKey, Comparable<MapKey> {
 	
 	private String value;
 	
@@ -39,6 +39,14 @@ public class MapKeyImpl implements MapKey {
 		} else if (!value.equals(other.value))
 			return false;
 		return true;
+	}
+
+	@Override
+	public int compareTo(MapKey arg0) {
+		if (arg0 == null) {
+			throw new NullPointerException();
+		}
+		return value.compareTo(arg0.getValue());
 	}
 	
 	

@@ -1,8 +1,6 @@
 package practic.task5;
 
-import java.util.Iterator;
 import java.util.Map;
-import java.util.Map.Entry;
 
 import nedis.study.interfaces.t5.collections.MapKey;
 import nedis.study.interfaces.t5.collections.MapUtils;
@@ -24,9 +22,7 @@ public class MapUtilsImpl implements MapUtils {
 		MultiMap result = new MultiMapImpl();
 		
 		for (int i = 0; i < maps.length; i++) {
-			for (Entry<MapKey, Integer> entry : maps[i].entrySet()) {
-				result.put((MapKeyImpl) entry.getKey(), entry.getValue());
-			}
+			result.putAll(maps[i]);
 		}
 		
 		return result;

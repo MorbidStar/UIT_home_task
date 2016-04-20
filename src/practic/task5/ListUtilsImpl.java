@@ -31,10 +31,8 @@ public class ListUtilsImpl implements ListUtils {
 			throw new IllegalArgumentException();
 		}
 		
-		List<Double> result = new ArrayList<>();
-		result.addAll(data);
-		Collections.sort(result);
-		Collections.reverse(result);
+		List<Double> result = new ArrayList<>(data);
+		Collections.sort(result, Collections.reverseOrder());
 		return result;
 	}
 
